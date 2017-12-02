@@ -15,17 +15,16 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.*;
 import static org.openqa.selenium.OutputType.*;
 
-public class GroupCreationTests {
+public class GroupCreationTests
+{
     FirefoxDriver wd;
-    
+
     @BeforeMethod
-    public void setUp() throws Exception {
+    public void setUp() throws Exception
+    {
         wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true).setBinary("/opt/firefox_46.0.1/firefox/firefox"));
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-    }
-    
-    @Test
-    public void GroupCreationTests() {
+
         wd.get("http://localhost/addressbook/index.php");
         wd.findElement(By.name("pass")).click();
         wd.findElement(By.name("pass")).clear();
@@ -34,6 +33,11 @@ public class GroupCreationTests {
         wd.findElement(By.name("user")).clear();
         wd.findElement(By.name("user")).sendKeys("admin");
         wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
+    }
+    
+    @Test
+    public void GroupCreationTests()
+    {
         wd.findElement(By.linkText("groups")).click();
         wd.findElement(By.name("new")).click();
         wd.findElement(By.name("group_name")).click();
@@ -50,12 +54,15 @@ public class GroupCreationTests {
     }
     
     @AfterMethod
-    public void tearDown() {
+    public void tearDown()
+    {
         wd.quit();
     }
     
-    public static boolean isAlertPresent(FirefoxDriver wd) {
-        try {
+    public static boolean isAlertPresent(FirefoxDriver wd)
+    {
+        try
+        {
             wd.switchTo().alert();
             return true;
         } catch (NoAlertPresentException e) {
