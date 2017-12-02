@@ -36,7 +36,7 @@ public class GroupCreationTests
     }
     
     @Test
-    public void GroupCreationTests()
+    public void testGroupCreation()
     {
         wd.findElement(By.linkText("groups")).click();
         wd.findElement(By.name("new")).click();
