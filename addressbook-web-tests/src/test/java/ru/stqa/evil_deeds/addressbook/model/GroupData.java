@@ -1,4 +1,4 @@
-package ru.stqa.evil_deeds.addressbook;
+package ru.stqa.evil_deeds.addressbook.model;
 
 public class GroupData
 {
