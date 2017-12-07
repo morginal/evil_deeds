@@ -3,24 +3,19 @@ package ru.stqa.evil_deeds.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class SessionHelper
+public class SessionHelper extends HelperBase
 {
     private FirefoxDriver wd;
 
     public SessionHelper(FirefoxDriver wd)
     {
-
-        this.wd = wd;
+        super(wd);
     }
 
     public void login(String user, String password)
     {
-        wd.findElement(By.name("pass")).click();
-        wd.findElement(By.name("pass")).clear();
-        wd.findElement(By.name("pass")).sendKeys(password);
-        wd.findElement(By.name("user")).click();
-        wd.findElement(By.name("user")).clear();
-        wd.findElement(By.name("user")).sendKeys(user);
-        wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
+        type(By.name("user"), user);
+        type(By.name("pass"), password);
+        click(By.xpath("//form[@id='LoginForm']/input[3]"));
     }
 }
