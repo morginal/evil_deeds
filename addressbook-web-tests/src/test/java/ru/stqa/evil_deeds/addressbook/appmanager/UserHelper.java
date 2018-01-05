@@ -1,6 +1,7 @@
 package ru.stqa.evil_deeds.addressbook.appmanager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.evil_deeds.addressbook.model.UserData;
@@ -9,7 +10,7 @@ import java.util.List;
 
 public class UserHelper extends HelperBase
 {
-    public UserHelper(FirefoxDriver wd)
+    public UserHelper(WebDriver wd)
     {
         super(wd);
     }
