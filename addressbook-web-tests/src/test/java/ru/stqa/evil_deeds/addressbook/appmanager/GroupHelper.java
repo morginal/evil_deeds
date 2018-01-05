@@ -25,16 +25,19 @@ public class GroupHelper extends HelperBase
     }
 
     public void initGroupCreation()
+
     {
         click(By.name("new"));
     }
 
     public void returnToGroupPage()
+
     {
         click(By.linkText("groups"));
     }
 
     public void deleteSelectedGroups()
+
     {
         click(By.name("delete"));
     }

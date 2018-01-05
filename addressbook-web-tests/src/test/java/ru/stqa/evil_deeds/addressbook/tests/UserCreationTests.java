@@ -8,10 +8,10 @@ public class UserCreationTests extends TestBase
     @Test
     public void newUserCreation() throws Exception
     {
-        app.initiateAddUser();
-        app.fillUserData(new UserData("John", "Constantine", "89285555228", "test@trashmail.me"));
-        app.submitUserCard();
-        app.checkUserAdded();
-        app.deleteUserRow();
+        app.getUserHelper().initiateAddUser();
+        app.getUserHelper().fillUserData(new UserData("John", "Constantine", "89285555228", "test@trashmail.me"));
+        app.getUserHelper().submitUserCard();
+        app.getUserHelper().checkUserAdded();
+        app.getUserHelper().deleteUserRow();
     }
 }
