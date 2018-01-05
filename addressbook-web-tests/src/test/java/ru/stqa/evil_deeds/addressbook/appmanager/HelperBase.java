@@ -24,9 +24,13 @@ public class HelperBase
     {
         if (text != null)
         {
-            click(locator);
-            wd.findElement(locator).clear();
-            wd.findElement(locator).sendKeys(text);
+            String existingText = wd.findElement(locator).getAttribute("value");
+            if (! existingText.equals(text))
+            {
+                click(locator);
+                wd.findElement(locator).clear();
+                wd.findElement(locator).sendKeys(text);
+            }
         }
     }
 
