@@ -9,7 +9,12 @@ public class ContactCreationTests extends TestBase
     public void newContactCreation() throws Exception
     {
         app.getContactHelper().initiateAddContact();
-        app.getContactHelper().fillContactData(new ContactData("John", "Constantine", "89285555228", "test@trashmail.me"));
+        app.getContactHelper().fillContactData(new ContactData(
+                "John",
+                "Constantine",
+                "89285555228",
+                "test@trashmail.me",
+                "test1"), true);
         app.getContactHelper().submitContactCard();
         app.getContactHelper().checkContactAdded();
     }
