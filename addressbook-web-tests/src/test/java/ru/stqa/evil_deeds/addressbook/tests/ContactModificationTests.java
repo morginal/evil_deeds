@@ -9,6 +9,17 @@ public class ContactModificationTests extends TestBase
     public void testContactModification()
     {
         app.getContactHelper().goContactPage();
+
+        if (! app.getContactHelper().isThereAContact())
+        {
+            app.getContactHelper().createContact(new ContactData(
+                    "John",
+                    "Constantine",
+                    "89285555228",
+                    "test@trashmail.me",
+                    "test1"), true);
+        }
+
         app.getContactHelper().initContactModification();
         app.getContactHelper().fillContactData(new ContactData(
                 "Boris",
@@ -16,6 +27,6 @@ public class ContactModificationTests extends TestBase
                 "88005552555",
                 "boris@seriousmail.me",
                 null), false);
-        app.getContactHelper().submitContactCard();
+        app.getContactHelper().updateContactCard();
     }
 }

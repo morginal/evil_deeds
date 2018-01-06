@@ -32,6 +32,11 @@ public class ContactHelper extends HelperBase
         click(By.xpath("//div[@id='content']/form/input[21]"));
     }
 
+    public void updateContactCard()
+    {
+        click(By.name("update"));
+    }
+
     public void fillContactData(ContactData contactData, boolean creation)
     {
         type(By.name("firstname"), contactData.getContactname());
@@ -68,5 +73,17 @@ public class ContactHelper extends HelperBase
     public void initContactModification()
     {
         click(By.xpath("//*[@title='Edit']"));
+    }
+
+    public boolean isThereAContact()
+    {
+        return isElementPresent(By.xpath("//table[@id='maintable']//input"));
+    }
+
+    public void createContact(ContactData contactData, Boolean creation)
+    {
+        initiateAddContact();
+        fillContactData(contactData, creation);
+        submitContactCard();
     }
 }

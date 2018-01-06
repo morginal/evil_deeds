@@ -15,7 +15,7 @@ public class ContactCreationTests extends TestBase
                 "89285555228",
                 "test@trashmail.me",
                 "test1"), true);
-        app.getContactHelper().submitContactCard();
+        app.getContactHelper().submitContactCard();;
         app.getContactHelper().checkContactAdded();
     }
 }
