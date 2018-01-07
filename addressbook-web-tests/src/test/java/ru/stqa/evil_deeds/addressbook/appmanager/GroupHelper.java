@@ -2,8 +2,11 @@ package ru.stqa.evil_deeds.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.evil_deeds.addressbook.model.GroupData;
+
+import java.util.List;
 
 public class GroupHelper extends HelperBase
 {
@@ -72,5 +75,10 @@ public class GroupHelper extends HelperBase
     public boolean isThereAGroup()
     {
         return isElementPresent(By.name("selected[]"));
+    }
+
+    public int getGroupCount()
+    {
+        return wd.findElements(By.cssSelector("span.group")).size();
     }
 }
